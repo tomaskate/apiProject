@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2023-10-09T13:18:06.515Z",
+    "end": "2023-10-09T13:18:11.415Z",
+    "duration": 4900
+  },
+  "results": [
+    {
+      "uuid": "e51cf0d9-aa91-43dd-ba45-d5de4f83bd6c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\apiTests.spec.js",
+      "file": "cypress\\e2e\\apiTests.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8554b9fe-fa34-482e-821f-75bcedecab82",
+          "title": "API tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check that user is on overview page",
+              "fullTitle": "API tests Check that user is on overview page",
+              "timedOut": null,
+              "duration": 1709,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.url().should(\"include\", \"/overview\");\ncy.get(\".row\").should(\"exist\");",
+              "err": {},
+              "uuid": "f49b60ca-6b95-491d-818f-2bca3d8a6521",
+              "parentUUID": "8554b9fe-fa34-482e-821f-75bcedecab82",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check that number of categories received from API is equal number on the page",
+              "fullTitle": "API tests Check that number of categories received from API is equal number on the page",
+              "timedOut": null,
+              "duration": 1158,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"http://5.189.186.217/categories\");\ncy.get(\".collection > .collection-item\").its(\"length\").should(\"equal\", categoriesByAPI.length);",
+              "err": {},
+              "uuid": "8365b6ad-3514-4574-90a6-21d0fd7c98b0",
+              "parentUUID": "8554b9fe-fa34-482e-821f-75bcedecab82",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f49b60ca-6b95-491d-818f-2bca3d8a6521",
+            "8365b6ad-3514-4574-90a6-21d0fd7c98b0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2867,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
