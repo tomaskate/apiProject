@@ -12,13 +12,13 @@
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
-    "start": "2023-10-09T13:18:06.515Z",
-    "end": "2023-10-09T13:18:11.415Z",
-    "duration": 4900
+    "start": "2023-10-09T13:21:09.513Z",
+    "end": "2023-10-09T13:21:14.331Z",
+    "duration": 4818
   },
   "results": [
     {
-      "uuid": "e51cf0d9-aa91-43dd-ba45-d5de4f83bd6c",
+      "uuid": "317139b7-dea1-4a46-8c88-1da8cc8754a2",
       "title": "",
       "fullFile": "cypress\\e2e\\apiTests.spec.js",
       "file": "cypress\\e2e\\apiTests.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "8554b9fe-fa34-482e-821f-75bcedecab82",
+          "uuid": "e16de3e3-78bb-4a9a-ab2a-c7eda996ceb8",
           "title": "API tests",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Check that user is on overview page",
               "fullTitle": "API tests Check that user is on overview page",
               "timedOut": null,
-              "duration": 1709,
+              "duration": 1651,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.url().should(\"include\", \"/overview\");\ncy.get(\".row\").should(\"exist\");",
               "err": {},
-              "uuid": "f49b60ca-6b95-491d-818f-2bca3d8a6521",
-              "parentUUID": "8554b9fe-fa34-482e-821f-75bcedecab82",
+              "uuid": "9384f603-aba6-4d79-bf46-42dd77e54be0",
+              "parentUUID": "e16de3e3-78bb-4a9a-ab2a-c7eda996ceb8",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Check that number of categories received from API is equal number on the page",
               "fullTitle": "API tests Check that number of categories received from API is equal number on the page",
               "timedOut": null,
-              "duration": 1158,
+              "duration": 1151,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "cy.visit(\"http://5.189.186.217/categories\");\ncy.get(\".collection > .collection-item\").its(\"length\").should(\"equal\", categoriesByAPI.length);",
               "err": {},
-              "uuid": "8365b6ad-3514-4574-90a6-21d0fd7c98b0",
-              "parentUUID": "8554b9fe-fa34-482e-821f-75bcedecab82",
+              "uuid": "c3474b0d-984a-4ffa-aa0a-262d17373858",
+              "parentUUID": "e16de3e3-78bb-4a9a-ab2a-c7eda996ceb8",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "f49b60ca-6b95-491d-818f-2bca3d8a6521",
-            "8365b6ad-3514-4574-90a6-21d0fd7c98b0"
+            "9384f603-aba6-4d79-bf46-42dd77e54be0",
+            "c3474b0d-984a-4ffa-aa0a-262d17373858"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2867,
+          "duration": 2802,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
