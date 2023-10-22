@@ -1,11 +1,4 @@
 {
-  "devDependencies": {
-    "cypress": "^13.3.0",
-    "mochawesome": "^7.1.3",
-    "mochawesome-merge": "^4.3.0",
-    "mochawesome-report-generator": "^6.2.0",
-    "start-server-and-test": "^2.0.1"
-  },
   "name": "apiproject",
   "description": "",
   "version": "1.0.0",
@@ -52,6 +45,7 @@
     "concat-map": "^0.0.1",
     "core-util-is": "^1.0.2",
     "cross-spawn": "^7.0.3",
+    "cypress-mongodb": "^6.2.0",
     "dashdash": "^1.14.1",
     "dayjs": "^1.11.10",
     "debug": "^4.3.4",
@@ -178,15 +172,14 @@
     "yauzl": "^2.10.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:run": "npm run prereport && npx cypress run --spec cypress/e2e/* --browser chrome && npm run report:html",
-    "report:html": "npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json && npx marge mochawesome.json",
-    "delete:reports": "rimraf cypress/results/* || true",
-    "delete:mochafile": "rimraf mochawesome.json || true",
-    "prereport": "npm run delete:reports && npm run delete:mochafile"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@faker-js/faker": "^8.2.0",
+    "cypress": "^13.3.2"
+  }
 }

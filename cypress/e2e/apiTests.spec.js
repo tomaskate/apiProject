@@ -18,4 +18,18 @@ describe("API tests", () => {
       .its("length")
       .should("equal", categoriesByAPI.length);
   });
+
+  // it("test", () => {
+  //   DbHelper.getAllCategories().then((res) => {
+  //     console.log(res);
+  //   });
+
+  //   DbHelper.getCategoryByName("test category 4").then((res) => {
+  //     console.log(res._id.toString());
+  //   });
+
+  //   DbHelper.getCategoriesByNameContaining("test").then((res) => {
+  //     console.log(res);
+  //   });
+  // });
 });

@@ -39,11 +39,29 @@ Cypress.Commands.add("loginByAPI", () => {
   }).then((res) => {
     const token = res.body.token;
     console.log(token);
+    cy.intercept("GET", "/api/analytics/overview").as("getOverview");
     cy.visit("http://5.189.186.217/overview", {
       onBeforeLoad(win) {
         win.localStorage.setItem("auth-token", token);
       },
     });
+    cy.wait("@getOverview", { timeout: 7000 })
+      .its("response")
+      .then((response) => {
+        cy.wrap(response.statusCode)
+          //.should("eq", 200)
+          .then((statusCode) => {
+            if (statusCode === 200) {
+              console.log("Your status is 200");
+            } else if (statusCode === 304) {
+              console.log("Your status code 304. It's ok! No worries");
+            } else {
+              console.log(
+                `Something went wrong! Your statusCode is ${statusCode}`
+              );
+            }
+          });
+      });
   });
 });
 
@@ -52,9 +70,34 @@ Cypress.Commands.add("getCategories", () => {
     method: "GET",
     url: "http://5.189.186.217/api/category",
     headers: {
-      "Authorization": window.localStorage.getItem("auth-token"),
+      Authorization: window.localStorage.getItem("auth-token"),
     },
   }).then((res) => {
     return res.body;
   });
+});
+
+Cypress.Commands.add("addPosition", (categoryId, costNumber, positionName) => {
+  cy.request({
+    method: "POST",
+    url: "http://5.189.186.217/api/position",
+    body: {
+      name: positionName,
+      cost: costNumber,
+      category: categoryId,
+    },
+    headers: {
+      Authorization: window.localStorage.getItem("auth-token"),
+    },
+  }).then((res) => {
+    return res.body;
+  });
+
+  // Cypress.Commands.add("getOrder", () => {
+  //   cy.intercept("POST", "http://5.189.186.217/api/order").as("getOrder");
+  //   cy.wait("@getOrder", { timeout: 4000 })
+  //     .then((response) => {
+  //       return response.body.order;
+  //     });
+  // });
 });
