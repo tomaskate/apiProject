@@ -13,7 +13,6 @@ pipeline {
         stage("Initialization of dependencies") {
             steps {
                 sh 'npm install'
-                sh 'cypress install'
             }
         }
         stage("Run tests") {
