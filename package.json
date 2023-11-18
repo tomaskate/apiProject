@@ -55,6 +55,8 @@
     "end-of-stream": "^1.4.4",
     "enquirer": "^2.4.1",
     "escape-string-regexp": "^1.0.5",
+    "eslint": "^8.53.0",
+    "eslint-plugin-cypress": "^2.15.1",
     "eventemitter2": "^6.4.7",
     "execa": "^4.1.0",
     "executable": "^4.1.1",
@@ -172,7 +174,12 @@
     "yauzl": "^2.10.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open:config": "npx cypress open --env email=workkateryna12370@gmail.com,password=1a2s3d4fA+",
+    "cy:run:chrome": "npx cypress run --env email=workkateryna12370@gmail.com,password=1a2s3d4fA+ --browser chrome",
+    "cy:run:firefox": "npx cypress run --env email=workkateryna12370@gmail.com,password=1a2s3d4fA+ --browser firefox",
+    "generate:report": "npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json && npx marge mochawesome.json",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -180,6 +187,7 @@
   "type": "module",
   "devDependencies": {
     "@faker-js/faker": "^8.2.0",
-    "cypress": "^13.3.2"
+    "cypress": "^13.3.2",
+    "husky": "^8.0.3"
   }
 }
