@@ -13,6 +13,7 @@
   },
   "author": "",
   "license": "ISC",
+  "type": "module",
   "devDependencies": {
     "cypress": "^13.5.1",
     "husky": "^8.0.3",
