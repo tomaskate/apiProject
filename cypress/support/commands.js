@@ -25,7 +25,6 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add("forceClick", { prevSubject: "element" }, (subject) => {
-  // eslint-disable-next-line cypress/no-force
   cy.wrap(subject).click({ force: true });
 });
 

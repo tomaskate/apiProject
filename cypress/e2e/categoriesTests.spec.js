@@ -48,10 +48,12 @@ describe("Categories tests", () => {
     cy.contains(categoryName).click();
     for (let i = 1; i <= numberPositions; i++) {
       const amount = faker.number.int({ min: 1, max: 8 });
-      // eslint-disable-next-line cypress/unsafe-to-chain-command
-      cy.get(`:nth-child(${i}) > :nth-child(3) > .input-field > .ng-untouched`)
-        .clear()
-        .type(amount);
+      cy.get(
+        `:nth-child(${i}) > :nth-child(3) > .input-field > .ng-untouched`
+      ).clear();
+      cy.get(
+        `:nth-child(${i}) > :nth-child(3) > .input-field > .ng-untouched`
+      ).type(amount);
       cy.get(`:nth-child(${i}) > :nth-child(4) > .btn`).click();
     }
     cy.contains("Завершити").click();
