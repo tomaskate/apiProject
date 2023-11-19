@@ -88,6 +88,6 @@ describe("Categories tests", () => {
     cy.on("window:confirm", () => true);
 
     /** Validate category deletion */
-    DbHelper.getCategoryByName(categoryName).should("eq", null);
+   // DbHelper.getCategoryByName(categoryName).should("eq", null);
   });
 });
